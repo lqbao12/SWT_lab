@@ -171,13 +171,12 @@ public class FilterForCRUD implements Filter {
      * Init method for this filter
      */
     public void init(FilterConfig filterConfig) {
-        this.filterConfig = filterConfig;
-        if (filterConfig != null) {
-            if (debug) {
-                log("FilterForCRUD:Initializing filter");
-            }
-        }
+    this.filterConfig = filterConfig;
+
+    if (filterConfig != null && debug) {
+        log("FilterForCRUD: Initializing filter");
     }
+}
 
     /**
      * Return a String representation of this object.
