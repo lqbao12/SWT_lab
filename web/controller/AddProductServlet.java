@@ -77,7 +77,7 @@ public class AddProductServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String name = request.getParameter("proname");
-        String cateID_raw = request.getParameter("cateID");
+        String cateIDRaw = request.getParameter("cateID");
         String des = request.getParameter("des");
         String price_raw = request.getParameter("price");
         String image = request.getParameter("image");
@@ -85,7 +85,7 @@ public class AddProductServlet extends HttpServlet {
         int cateID, quantity;
         long price;
         try {
-            cateID = Integer.parseInt(cateID_raw);
+            cateID = Integer.parseInt(cateIDRaw);
             quantity = Integer.parseInt(quantity_raw);
             price = Long.parseLong(price_raw);
             DAO.INSTANCE.addNewProduct(name, cateID, des, price, image, quantity);
